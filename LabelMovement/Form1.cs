@@ -64,8 +64,6 @@ namespace LabelMovement
         {
             center_cb.Checked = false;
 
-            //label1.TextAlign = ContentAlignment.;
-
             switch((int)label1.TextAlign)
             {
                 case 1:
