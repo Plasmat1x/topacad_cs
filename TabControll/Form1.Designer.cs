@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.refresh_bt = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.sleep_bar = new System.Windows.Forms.ProgressBar();
             this.clear_bar = new System.Windows.Forms.ProgressBar();
@@ -44,12 +46,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.play_bt = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dish_bt = new System.Windows.Forms.Button();
+            this.bath_bt = new System.Windows.Forms.Button();
+            this.sleep_bt = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -67,7 +78,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.refresh_bt);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.sleep_bar);
             this.tabPage1.Controls.Add(this.clear_bar);
@@ -88,6 +99,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // refresh_bt
+            // 
+            this.refresh_bt.Location = new System.Drawing.Point(211, 8);
+            this.refresh_bt.Name = "refresh_bt";
+            this.refresh_bt.Size = new System.Drawing.Size(75, 23);
+            this.refresh_bt.TabIndex = 13;
+            this.refresh_bt.Text = "refresh";
+            this.refresh_bt.UseVisualStyleBackColor = true;
+            this.refresh_bt.Click += new System.EventHandler(this.refresh_bt_Click);
             // 
             // button2
             // 
@@ -200,25 +221,39 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.play_bt);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(768, 400);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "play";
+            this.tabPage2.Text = "play room";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // play_bt
+            // 
+            this.play_bt.Location = new System.Drawing.Point(6, 371);
+            this.play_bt.Name = "play_bt";
+            this.play_bt.Size = new System.Drawing.Size(75, 23);
+            this.play_bt.TabIndex = 0;
+            this.play_bt.Text = "Play";
+            this.play_bt.UseVisualStyleBackColor = true;
+            this.play_bt.Click += new System.EventHandler(this.play_bt_Click);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dish_bt);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(768, 400);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "dish";
+            this.tabPage3.Text = "dining room";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.bath_bt);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(768, 400);
@@ -228,6 +263,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.sleep_bt);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(768, 400);
@@ -235,15 +271,46 @@
             this.tabPage5.Text = "badroom";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // dish_bt
             // 
-            this.button1.Location = new System.Drawing.Point(687, 371);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dish_bt.Location = new System.Drawing.Point(3, 374);
+            this.dish_bt.Name = "dish_bt";
+            this.dish_bt.Size = new System.Drawing.Size(75, 23);
+            this.dish_bt.TabIndex = 1;
+            this.dish_bt.Text = "dish";
+            this.dish_bt.UseVisualStyleBackColor = true;
+            this.dish_bt.Click += new System.EventHandler(this.dish_bt_Click);
+            // 
+            // bath_bt
+            // 
+            this.bath_bt.Location = new System.Drawing.Point(3, 374);
+            this.bath_bt.Name = "bath_bt";
+            this.bath_bt.Size = new System.Drawing.Size(75, 23);
+            this.bath_bt.TabIndex = 1;
+            this.bath_bt.Text = "bath";
+            this.bath_bt.UseVisualStyleBackColor = true;
+            this.bath_bt.Click += new System.EventHandler(this.bath_bt_Click);
+            // 
+            // sleep_bt
+            // 
+            this.sleep_bt.Location = new System.Drawing.Point(3, 374);
+            this.sleep_bt.Name = "sleep_bt";
+            this.sleep_bt.Size = new System.Drawing.Size(75, 23);
+            this.sleep_bt.TabIndex = 1;
+            this.sleep_bt.Text = "sleep";
+            this.sleep_bt.UseVisualStyleBackColor = true;
+            this.sleep_bt.Click += new System.EventHandler(this.sleep_bt_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(212, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(198, 157);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
             // 
             // Form1
             // 
@@ -256,6 +323,11 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,7 +353,12 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button refresh_bt;
+        private System.Windows.Forms.Button play_bt;
+        private System.Windows.Forms.Button dish_bt;
+        private System.Windows.Forms.Button bath_bt;
+        private System.Windows.Forms.Button sleep_bt;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
