@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Random", "Random\Random.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TabControll", "TabControll\TabControll.csproj", "{555D1D5A-3B13-4CAF-98D5-8D16B835BB47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame", "CardGame\CardGame.csproj", "{9FA4EB67-C35F-4CA6-925B-FD51C9034029}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{555D1D5A-3B13-4CAF-98D5-8D16B835BB47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{555D1D5A-3B13-4CAF-98D5-8D16B835BB47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{555D1D5A-3B13-4CAF-98D5-8D16B835BB47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA4EB67-C35F-4CA6-925B-FD51C9034029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA4EB67-C35F-4CA6-925B-FD51C9034029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA4EB67-C35F-4CA6-925B-FD51C9034029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA4EB67-C35F-4CA6-925B-FD51C9034029}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

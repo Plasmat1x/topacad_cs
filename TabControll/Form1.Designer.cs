@@ -46,21 +46,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.play_bt = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dish_bt = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.bath_bt = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.sleep_bt = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.card2 = new System.Windows.Forms.PictureBox();
+            this.card1 = new System.Windows.Forms.PictureBox();
+            this.cardplay_bt = new System.Windows.Forms.Button();
+            this.cardnext_bt = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -78,6 +84,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cardnext_bt);
+            this.tabPage1.Controls.Add(this.cardplay_bt);
+            this.tabPage1.Controls.Add(this.card1);
+            this.tabPage1.Controls.Add(this.card2);
             this.tabPage1.Controls.Add(this.refresh_bt);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.sleep_bar);
@@ -102,6 +112,7 @@
             // 
             // refresh_bt
             // 
+            this.refresh_bt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.refresh_bt.Location = new System.Drawing.Point(211, 8);
             this.refresh_bt.Name = "refresh_bt";
             this.refresh_bt.Size = new System.Drawing.Size(75, 23);
@@ -112,12 +123,14 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(6, 371);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 12;
             this.button2.Text = "action";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // sleep_bar
@@ -231,6 +244,17 @@
             this.tabPage2.Text = "play room";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 158);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            // 
             // play_bt
             // 
             this.play_bt.Location = new System.Drawing.Point(6, 371);
@@ -251,26 +275,6 @@
             this.tabPage3.Text = "dining room";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.bath_bt);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(768, 400);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "bathroom";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.sleep_bt);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(768, 400);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "badroom";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // dish_bt
             // 
             this.dish_bt.Location = new System.Drawing.Point(3, 374);
@@ -280,6 +284,16 @@
             this.dish_bt.Text = "dish";
             this.dish_bt.UseVisualStyleBackColor = true;
             this.dish_bt.Click += new System.EventHandler(this.dish_bt_Click);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.bath_bt);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(768, 400);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "bathroom";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // bath_bt
             // 
@@ -291,6 +305,16 @@
             this.bath_bt.UseVisualStyleBackColor = true;
             this.bath_bt.Click += new System.EventHandler(this.bath_bt_Click);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.sleep_bt);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(768, 400);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "badroom";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // sleep_bt
             // 
             this.sleep_bt.Location = new System.Drawing.Point(3, 374);
@@ -301,16 +325,43 @@
             this.sleep_bt.UseVisualStyleBackColor = true;
             this.sleep_bt.Click += new System.EventHandler(this.sleep_bt_Click);
             // 
-            // pictureBox1
+            // card2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(212, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(198, 157);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.card2.Location = new System.Drawing.Point(601, 8);
+            this.card2.Name = "card2";
+            this.card2.Size = new System.Drawing.Size(161, 140);
+            this.card2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.card2.TabIndex = 14;
+            this.card2.TabStop = false;
+            // 
+            // card1
+            // 
+            this.card1.Location = new System.Drawing.Point(430, 8);
+            this.card1.Name = "card1";
+            this.card1.Size = new System.Drawing.Size(165, 140);
+            this.card1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.card1.TabIndex = 15;
+            this.card1.TabStop = false;
+            // 
+            // cardplay_bt
+            // 
+            this.cardplay_bt.Location = new System.Drawing.Point(520, 160);
+            this.cardplay_bt.Name = "cardplay_bt";
+            this.cardplay_bt.Size = new System.Drawing.Size(75, 23);
+            this.cardplay_bt.TabIndex = 16;
+            this.cardplay_bt.Text = "Play";
+            this.cardplay_bt.UseVisualStyleBackColor = true;
+            this.cardplay_bt.Click += new System.EventHandler(this.cardplay_bt_Click);
+            // 
+            // cardnext_bt
+            // 
+            this.cardnext_bt.Location = new System.Drawing.Point(601, 160);
+            this.cardnext_bt.Name = "cardnext_bt";
+            this.cardnext_bt.Size = new System.Drawing.Size(75, 23);
+            this.cardnext_bt.TabIndex = 17;
+            this.cardnext_bt.Text = "Next";
+            this.cardnext_bt.UseVisualStyleBackColor = true;
+            this.cardnext_bt.Click += new System.EventHandler(this.cardnext_bt_Click);
             // 
             // Form1
             // 
@@ -324,10 +375,12 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.card1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -359,6 +412,10 @@
         private System.Windows.Forms.Button bath_bt;
         private System.Windows.Forms.Button sleep_bt;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox card1;
+        private System.Windows.Forms.PictureBox card2;
+        private System.Windows.Forms.Button cardnext_bt;
+        private System.Windows.Forms.Button cardplay_bt;
     }
 }
 

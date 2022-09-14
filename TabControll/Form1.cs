@@ -16,6 +16,9 @@ namespace TabControll
     {
         Player player;
         Random random;
+        Image[] images;
+        CardGame cardgame;
+        int index;
 
         public Form1()
         {
@@ -23,6 +26,18 @@ namespace TabControll
 
             player = new Player();
             random = new Random();
+            cardgame = new CardGame();
+
+            images = new Image[6];
+            images[0] = Image.FromFile("../../img/1.png");
+            images[1] = Image.FromFile("../../img/2.png");
+            images[2] = Image.FromFile("../../img/3.png");
+            images[3] = Image.FromFile("../../img/4.png");
+            images[4] = Image.FromFile("../../img/5.png");
+            images[5] = Image.FromFile("../../img/6.png");
+
+            cardgame.next(random.Next(0, 6));
+            card1.Image = images[cardgame.index1];
 
             health_bar.Value = player.Health;
             hungry_bar.Value = player.Hungry;
@@ -30,7 +45,7 @@ namespace TabControll
             clear_bar.Value = player.Clear;
             sleep_bar.Value = player.Sleep;
 
-            money_val.Text = 500 + "$";
+            money_val.Text = "$" + cardgame.Points;
             
         }
 
@@ -149,6 +164,46 @@ namespace TabControll
             player.Clear += 100;
 
             playerUpdate();
+        }
+
+        private void cardplay_bt_Click(object sender, EventArgs e)
+        {
+            if (cardgame.check())
+            {
+                money_val.Text = "$" + cardgame.Points;
+                cardgame.next(random.Next(0, 6));
+                card1.Image = images[cardgame.index1];
+                card2.Image = null;
+            }
+            else 
+            {
+                cardgame.Points -= 100;
+                money_val.Text = "$" + cardgame.Points;
+                cardgame.next(random.Next(0, 6));
+                card1.Image = images[cardgame.index1];
+                card2.Image = null;
+            }
+
+            if (cardgame.Points <= 0)
+            {
+                MessageBox.Show("zero points");
+            }
+        }
+
+        private void cardnext_bt_Click(object sender, EventArgs e)
+        {
+            cardgame.next(index);
+
+            card2.Image = images[cardgame.index2];
+
+            if (index < 5)
+            {
+                index++;
+            }
+            else
+            {
+                index = 0;
+            }
         }
     }
 }
