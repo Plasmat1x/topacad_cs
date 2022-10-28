@@ -1,0 +1,14 @@
+﻿            BinaryFormatter formatter = new BinaryFormatter();
+            //serialization
+            using (Stream output = File.Create("person.txt"))
+            {
+                formatter.Serialize(output, person);
+            }
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            //deserialization
+            using (Stream input = File.OpenRead("person.txt"))
+            {
+                p = (Person)formatter.Deserialize(input);
+                label2.Text = p.Name;
+            }

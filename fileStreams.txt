@@ -1,0 +1,15 @@
+
+            FileStream fs = new FileStream("../txt.txt", FileMode.OpenOrCreate);
+            string text = "Hello, World!";
+            byte[] buffer = new byte[text.Length];
+            for (int i = 0; i < text.Length; i++)
+            {
+                buffer[i] = (byte)text[i];
+            }
+            fs.Write(buffer, 0, buffer.Length);
+            fs.Close();
+
+
+            StreamWriter sw = new StreamWriter("../txt.txt", true);
+            sw.WriteLine("\nstring");
+            sw.Close();
