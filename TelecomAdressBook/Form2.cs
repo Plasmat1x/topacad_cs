@@ -27,7 +27,6 @@ namespace TelecomAdressBook
 
             //pictureBox1.Image = Image.FromFile("add-plus-icon-28.png");
             pictureBox1.Image = Image.FromFile("../../add-plus-icon-28.png");
-
         }
 
         private void add_bt_Click(object sender, EventArgs e)
@@ -69,6 +68,7 @@ namespace TelecomAdressBook
         private void Form2_Load(object sender, EventArgs e)
         {
             //main.Visible = false;
+            this.Location = main.Location;
         }
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)

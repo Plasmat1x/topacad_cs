@@ -14,10 +14,11 @@ namespace TelecomAdressBook
 {
     public partial class Form3 : Form
     {
+        private Form1 main;
         private Human sel_contact;
-        byte[] imgBuffer;
+        private byte[] imgBuffer;
 
-        public Form3(Human human)
+        public Form3(Human human, Form1 form)
         {
             InitializeComponent();
 
@@ -31,11 +32,13 @@ namespace TelecomAdressBook
             textBox4.Text = sel_contact.PhoeneNumber;
             if(sel_contact.Photo != null)
                 pictureBox1.Image = Image.FromStream(new MemoryStream(sel_contact.Photo));
+
+            main = form;
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            this.Location = main.Location;
         }
 
         static public byte[] ImageToBinary(string imagePath)

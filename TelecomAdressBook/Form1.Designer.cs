@@ -32,6 +32,7 @@
             this.actionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.search_bt = new System.Windows.Forms.Button();
@@ -39,7 +40,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LastNameSort = new System.Windows.Forms.RadioButton();
             this.FirstNameSort = new System.Windows.Forms.RadioButton();
-            this.editContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,16 +67,23 @@
             // addNewContactToolStripMenuItem
             // 
             this.addNewContactToolStripMenuItem.Name = "addNewContactToolStripMenuItem";
-            this.addNewContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewContactToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.addNewContactToolStripMenuItem.Text = "Add new contact";
             this.addNewContactToolStripMenuItem.Click += new System.EventHandler(this.addNewContactToolStripMenuItem_Click);
             // 
             // deleteContactToolStripMenuItem
             // 
             this.deleteContactToolStripMenuItem.Name = "deleteContactToolStripMenuItem";
-            this.deleteContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteContactToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.deleteContactToolStripMenuItem.Text = "Delete contact";
             this.deleteContactToolStripMenuItem.Click += new System.EventHandler(this.deleteContactToolStripMenuItem_Click);
+            // 
+            // editContactToolStripMenuItem
+            // 
+            this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
+            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.editContactToolStripMenuItem.Text = "Edit contact";
+            this.editContactToolStripMenuItem.Click += new System.EventHandler(this.editContactToolStripMenuItem_Click);
             // 
             // listBox1
             // 
@@ -153,13 +160,6 @@
             this.FirstNameSort.UseVisualStyleBackColor = true;
             this.FirstNameSort.CheckedChanged += new System.EventHandler(this.FirstNameSort_CheckedChanged);
             // 
-            // editContactToolStripMenuItem
-            // 
-            this.editContactToolStripMenuItem.Name = "editContactToolStripMenuItem";
-            this.editContactToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.editContactToolStripMenuItem.Text = "Edit contact";
-            this.editContactToolStripMenuItem.Click += new System.EventHandler(this.editContactToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,9 +171,12 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Contact book";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

@@ -102,7 +102,7 @@ namespace TelecomAdressBook
             {
                 foreach (var item in manager.Contacts)
                 {
-                    editContactForm = new Form3(manager.GetContact(listBox1.SelectedItem.ToString()));
+                    editContactForm = new Form3(manager.GetContact(listBox1.SelectedItem.ToString()), this);
                 }
                 if (editContactForm.ShowDialog() == DialogResult.OK)
                     Update_List();
