@@ -80,8 +80,7 @@ namespace TelecomAdressBook
 
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            editContactForm = new Form3();
-            editContactForm.ShowDialog();
+
         }
 
         private void deleteContactToolStripMenuItem_Click(object sender, EventArgs e)
@@ -99,7 +98,15 @@ namespace TelecomAdressBook
 
         private void editContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (listBox1.SelectedItem != null)
+            {
+                foreach (var item in manager.Contacts)
+                {
+                    editContactForm = new Form3(manager.GetContact(listBox1.SelectedItem.ToString()));
+                }
+                if (editContactForm.ShowDialog() == DialogResult.OK)
+                    Update_List();
+            }
         }
 
         private void FirstNameSort_CheckedChanged(object sender, EventArgs e)

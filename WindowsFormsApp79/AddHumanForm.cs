@@ -14,12 +14,15 @@ namespace WindowsFormsApp79
     {
         Form1 form1;
         PhoneBook phoneBook;
+        Image photo;
         public AddHumanForm(Form1 form1, PhoneBook phoneBook)
         {
             InitializeComponent();
             this.form1 = form1;
             this.phoneBook = phoneBook;
             this.form1.Visible = false;
+            openFileDialog1.Filter = "Фотография|*.jpg||*.jpeg";
+            openFileDialog1.InitialDirectory = @"C:\Users\feday\Pictures";
         }
 
         private void AddHumanForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -29,13 +32,22 @@ namespace WindowsFormsApp79
 
         private void Add_Button_Click(object sender, EventArgs e)
         {
-            phoneBook.AddHuman(FirstName_TextBox.Text, Surname_TextBox.Text, PhoneNumber_MaskedTextBox.Text);
+            phoneBook.AddHuman(FirstName_TextBox.Text, Surname_TextBox.Text, PhoneNumber_MaskedTextBox.Text, openFileDialog1.FileName);
+
             this.DialogResult = DialogResult.OK;
         }
 
         private void Cancel_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void AddHumanPhoto_Button_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                photo = Image.FromFile(openFileDialog1.FileName);
+            }
         }
     }
 }

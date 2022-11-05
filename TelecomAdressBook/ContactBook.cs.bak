@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -22,7 +21,7 @@ namespace TelecomAdressBook
         
         }
 
-        public void AddContact(string First, string Last, string Phone, byte[] Photo = null)
+        public void AddContact(string First, string Last, string Phone, string Photo = null)
         {
             Contacts.Add(new Human(First, Last, Phone, CheckId(), Photo));
         }
@@ -90,32 +89,12 @@ namespace TelecomAdressBook
             return Contacts;
         }
 
-        public Human GetContact(string selected)
-        {
-            try
-            {
-                string[] array = selected.Split(' ');
-
-                foreach (var item in Contacts)
-                {
-                    if (item.Id == int.Parse(array[0]))
-                    {
-                        return item;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-
-            return null;
-        }
-
         public bool Delete(string selected)
         {
             try
             {
+
+
                 /*
                 string tmp = "";
                 for (int i = 0; i < selected.Length; i++)
@@ -177,16 +156,5 @@ namespace TelecomAdressBook
 
             return ContactId;
         }
-
-        /*
-        static public byte[] ImageToBinary(string imagePath)
-        {
-            FileStream fS = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
-            byte[] b = new byte[fS.Length];
-            fS.Read(b, 0, (int)fS.Length);
-            fS.Close();
-            return b;
-        }
-        */
     }
 }

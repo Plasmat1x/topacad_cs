@@ -15,21 +15,29 @@ namespace TelecomAdressBook
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoeneNumber { get; set; }
-        public byte[] Photo { get; set; }
+        public string PhotoPath { get; set; }
+
+        [NonSerialized]
+        private Image img;
 
         public Human() { }
-        public Human(string firstname, string lastname, string phoenenumber, int id, byte[] photo = null)
+        public Human(string firstname, string lastname, string phoenenumber, int id, string photo = null)
         {
             FirstName = firstname;
             LastName = lastname;
             PhoeneNumber = phoenenumber;
             Id = id;
-            Photo = photo;
+            PhotoPath = photo;
         }
 
         public string Get()
         {
             return $"{Id} {FirstName} {LastName} {PhoeneNumber}";
+        }
+
+        public Image GetImage()
+        {
+            return img;
         }
 
         public static bool SortVar = false;

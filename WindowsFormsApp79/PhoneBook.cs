@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,36 @@ namespace WindowsFormsApp79
     [Serializable]
     public class PhoneBook
     {
-        public List<Human> Humans { get; private set; } = new List<Human>(); 
-
-        public void AddHuman(string firstName, string surname, string phoneNumber)
+        public List<Human> Humans { get; private set; } = new List<Human>();
+        public int humanId;
+        public void AddHuman(string firstName, string surname, string phoneNumber, string humanPhoto)
         {
-            Humans.Add(new Human(firstName, surname, phoneNumber));
+            Humans.Add(new Human(firstName, surname, phoneNumber, CheckId(), humanPhoto));
         }
+        private int CheckId()
+        {
+            bool check = true;
+            if (Humans.Count <= 0) return ++humanId;
 
+            while (true)
+            {
+                check = true;
+                for (int i = 0; i < Humans.Count; i++)
+                {
+                    if (humanId == Humans[i].Id)
+                    {
+                        ++humanId;
+                        check = false;
+                    }
+                    
+                }
+                if (check == true)
+                {
+                    break;
+                }
+            }
+            return humanId;
+        }
         public IEnumerable<Human> Search(string requestType, string requestSearch)
         {
             List<Human> list = new List<Human>();
@@ -70,22 +94,19 @@ namespace WindowsFormsApp79
         {
             try
             {
-                string tempStr = "";
-                for (int i = 0; i < humanInfo.Length; i++)
+                string[] array = humanInfo.Split('.');
+                int humanId = int.Parse(array[0]);
+                for(int i = 0; i < Humans.Count; i++)
                 {
-                    if (humanInfo[i] != ' ')
+                    if (Humans[i].Id == humanId)
                     {
-                        tempStr += humanInfo[i];
+                        Humans.Remove(Humans[i]);
                     }
                 }
-                string[] array = tempStr.Split(':', '|');
-                Human temp = new Human(array[1], array[3], array[5]);
-                Humans.Remove(temp);
                 return true;
             }
             catch (Exception)
             {
-
                 return false;
             }
      

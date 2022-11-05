@@ -36,6 +36,10 @@
             this.Add_Button = new System.Windows.Forms.Button();
             this.Cancel_linkLabel = new System.Windows.Forms.LinkLabel();
             this.PhoneNumber_MaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.HumanPhoto_PictureBox = new System.Windows.Forms.PictureBox();
+            this.AddHumanPhoto_Button = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.HumanPhoto_PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // FirstName_TextBox
@@ -108,11 +112,36 @@
             this.PhoneNumber_MaskedTextBox.Size = new System.Drawing.Size(197, 22);
             this.PhoneNumber_MaskedTextBox.TabIndex = 8;
             // 
+            // HumanPhoto_PictureBox
+            // 
+            this.HumanPhoto_PictureBox.Location = new System.Drawing.Point(308, 61);
+            this.HumanPhoto_PictureBox.Name = "HumanPhoto_PictureBox";
+            this.HumanPhoto_PictureBox.Size = new System.Drawing.Size(228, 202);
+            this.HumanPhoto_PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.HumanPhoto_PictureBox.TabIndex = 9;
+            this.HumanPhoto_PictureBox.TabStop = false;
+            // 
+            // AddHumanPhoto_Button
+            // 
+            this.AddHumanPhoto_Button.Location = new System.Drawing.Point(308, 288);
+            this.AddHumanPhoto_Button.Name = "AddHumanPhoto_Button";
+            this.AddHumanPhoto_Button.Size = new System.Drawing.Size(228, 31);
+            this.AddHumanPhoto_Button.TabIndex = 10;
+            this.AddHumanPhoto_Button.Text = "Добавить фото";
+            this.AddHumanPhoto_Button.UseVisualStyleBackColor = true;
+            this.AddHumanPhoto_Button.Click += new System.EventHandler(this.AddHumanPhoto_Button_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // AddHumanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(296, 472);
+            this.ClientSize = new System.Drawing.Size(548, 472);
+            this.Controls.Add(this.AddHumanPhoto_Button);
+            this.Controls.Add(this.HumanPhoto_PictureBox);
             this.Controls.Add(this.PhoneNumber_MaskedTextBox);
             this.Controls.Add(this.Cancel_linkLabel);
             this.Controls.Add(this.Add_Button);
@@ -124,6 +153,7 @@
             this.Name = "AddHumanForm";
             this.Text = "AddHumanForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddHumanForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.HumanPhoto_PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +169,8 @@
         private System.Windows.Forms.Button Add_Button;
         private System.Windows.Forms.LinkLabel Cancel_linkLabel;
         private System.Windows.Forms.MaskedTextBox PhoneNumber_MaskedTextBox;
+        private System.Windows.Forms.PictureBox HumanPhoto_PictureBox;
+        private System.Windows.Forms.Button AddHumanPhoto_Button;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

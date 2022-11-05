@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace TelecomAdressBook
     {
         Form1 main;
         ContactBook manager;
+        byte[] imgBuffer;
 
         public Form2(Form1 form1, ContactBook manager)
         {
@@ -22,6 +24,10 @@ namespace TelecomAdressBook
             main = form1;
             this.manager = manager;
             openFileDialog1.Filter = " |*.jpg| |*.png| |*.bmp| |*.jpeg";
+
+            //pictureBox1.Image = Image.FromFile("add-plus-icon-28.png");
+            pictureBox1.Image = Image.FromFile("../../add-plus-icon-28.png");
+
         }
 
         private void add_bt_Click(object sender, EventArgs e)
@@ -49,7 +55,7 @@ namespace TelecomAdressBook
                 MessageBox.Show("Phone number is empty, please enter data");
             }
 
-            manager.AddContact(firstname_tb.Text, lastname_tb.Text, number_tb.Text, openFileDialog1.FileName);
+            manager.AddContact(firstname_tb.Text, lastname_tb.Text, number_tb.Text, imgBuffer);
             main.Update_List();
             //main.Visible = true;
             //this.Close();
@@ -69,8 +75,15 @@ namespace TelecomAdressBook
         {
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-             
+                imgBuffer = Form3.ImageToBinary(openFileDialog1.FileName);
+                pictureBox1.Image = Image.FromStream(new MemoryStream(imgBuffer));
             }
+        }
+
+        private void pictureBox1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Double click for adding image", pictureBox1);
+            toolTip1.ReshowDelay = 1000;
         }
     }
 }
