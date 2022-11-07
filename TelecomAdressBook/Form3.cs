@@ -83,9 +83,7 @@ namespace TelecomAdressBook
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 imgBuffer = ImageToBinary(openFileDialog1.FileName);
-                BinaryToFile(imgBuffer, $"{sel_contact.Id}.bin");
-                pictureBox1.Image = Image.FromStream(new MemoryStream(FromFileToBin($"{sel_contact.Id}")));
-                
+                pictureBox1.Image = Image.FromStream(new MemoryStream(imgBuffer));
             }
         }
 
@@ -120,6 +118,7 @@ namespace TelecomAdressBook
                 if(imgBuffer != null)
                 {
                     sel_contact.Photo = $"{sel_contact.Id}.bin";
+                    BinaryToFile(imgBuffer, sel_contact.Id.ToString());
                 }
 
                 this.DialogResult = DialogResult.OK;
