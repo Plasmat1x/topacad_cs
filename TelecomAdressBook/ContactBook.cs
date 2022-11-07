@@ -22,7 +22,7 @@ namespace TelecomAdressBook
         
         }
 
-        public void AddContact(string First, string Last, string Phone, byte[] Photo = null)
+        public void AddContact(string First, string Last, string Phone, string Photo = null)
         {
             Contacts.Add(new Human(First, Last, Phone, CheckId(), Photo));
         }

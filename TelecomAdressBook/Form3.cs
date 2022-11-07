@@ -23,7 +23,7 @@ namespace TelecomAdressBook
         {
             InitializeComponent();
 
-            pictureBox1.Image = Image.FromFile("../../add-plus-icon-28.png");
+            pictureBox1.Image = Image.FromFile("add-plus-icon-28.png");
 
             sel_contact = human;
 
@@ -31,8 +31,10 @@ namespace TelecomAdressBook
             textBox2.Text = sel_contact.FirstName;
             textBox3.Text = sel_contact.LastName;
             textBox4.Text = sel_contact.PhoeneNumber;
+
             if(sel_contact.Photo != null)
-                pictureBox1.Image = Image.FromStream(new MemoryStream(sel_contact.Photo));
+                //pictureBox1.Image = Image.FromStream(new MemoryStream(sel_contact.Photo));
+                pictureBox1.Image = Image.FromStream(new MemoryStream(FromFileToBin(sel_contact.Photo)));
 
             main = form;
         }
@@ -68,7 +70,7 @@ namespace TelecomAdressBook
 
             BinaryFormatter formatter = new BinaryFormatter();
 
-            using (Stream input = File.OpenRead(filename + ".bin"))
+            using (Stream input = File.OpenRead(filename))
             {
                 r = (byte[])formatter.Deserialize(input);
             }
@@ -81,7 +83,9 @@ namespace TelecomAdressBook
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 imgBuffer = ImageToBinary(openFileDialog1.FileName);
-                pictureBox1.Image = Image.FromStream(new MemoryStream(imgBuffer));
+                BinaryToFile(imgBuffer, $"{sel_contact.Id}.bin");
+                pictureBox1.Image = Image.FromStream(new MemoryStream(FromFileToBin($"{sel_contact.Id}")));
+                
             }
         }
 
@@ -115,7 +119,7 @@ namespace TelecomAdressBook
 
                 if(imgBuffer != null)
                 {
-                    sel_contact.Photo = imgBuffer;
+                    sel_contact.Photo = $"{sel_contact.Id}.bin";
                 }
 
                 this.DialogResult = DialogResult.OK;

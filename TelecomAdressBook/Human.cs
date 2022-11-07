@@ -15,10 +15,10 @@ namespace TelecomAdressBook
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoeneNumber { get; set; }
-        public byte[] Photo { get; set; }
+        public string Photo { get; set; }
 
         public Human() { }
-        public Human(string firstname, string lastname, string phoenenumber, int id, byte[] photo = null)
+        public Human(string firstname, string lastname, string phoenenumber, int id, string photo = null)
         {
             FirstName = firstname;
             LastName = lastname;

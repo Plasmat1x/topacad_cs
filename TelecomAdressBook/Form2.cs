@@ -26,7 +26,7 @@ namespace TelecomAdressBook
             openFileDialog1.Filter = " |*.jpg| |*.png| |*.bmp| |*.jpeg";
 
             //pictureBox1.Image = Image.FromFile("add-plus-icon-28.png");
-            pictureBox1.Image = Image.FromFile("../../add-plus-icon-28.png");
+            pictureBox1.Image = Image.FromFile("add-plus-icon-28.png");
         }
 
         private void add_bt_Click(object sender, EventArgs e)
@@ -54,12 +54,18 @@ namespace TelecomAdressBook
                 MessageBox.Show("Phone number is empty, please enter data");
             }
 
-
-            if(firstname_tb.Text.Length > 0 && lastname_tb.Text.Length > 0 && number_tb.Text.Length > 0)
+            if (firstname_tb.Text.Length > 0 && lastname_tb.Text.Length > 0 && number_tb.Text.Length > 0)
             {
-                manager.AddContact(firstname_tb.Text, lastname_tb.Text, number_tb.Text, imgBuffer);
+                manager.AddContact(firstname_tb.Text, lastname_tb.Text, number_tb.Text);
                 main.Update_List();
             }
+
+            if (imgBuffer != null)
+            {
+                Form3.BinaryToFile(imgBuffer, manager.Contacts.Last<Human>().Id.ToString());
+                manager.Contacts.Last<Human>().Photo = $"{manager.Contacts.Last<Human>().Id.ToString()}.bin";
+            }
+
             //main.Visible = true;
             //this.Close();
         }
