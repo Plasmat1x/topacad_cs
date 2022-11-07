@@ -67,10 +67,10 @@ namespace XMLWrite
                 XmlNode child = item.FirstChild; //<Id>
 
                 child = child.NextSibling; //<Name>
-                string name = child.Value;
+                string name = child.InnerText;
 
                 child = child.NextSibling; //<Type>
-                string type = child.Value;
+                string type = child.InnerText;
 
                 AddItem(name, type); //!error (string == null, string == null)
             }

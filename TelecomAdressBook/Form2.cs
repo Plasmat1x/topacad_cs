@@ -54,8 +54,12 @@ namespace TelecomAdressBook
                 MessageBox.Show("Phone number is empty, please enter data");
             }
 
-            manager.AddContact(firstname_tb.Text, lastname_tb.Text, number_tb.Text, imgBuffer);
-            main.Update_List();
+
+            if(firstname_tb.Text.Length > 0 && lastname_tb.Text.Length > 0 && number_tb.Text.Length > 0)
+            {
+                manager.AddContact(firstname_tb.Text, lastname_tb.Text, number_tb.Text, imgBuffer);
+                main.Update_List();
+            }
             //main.Visible = true;
             //this.Close();
         }

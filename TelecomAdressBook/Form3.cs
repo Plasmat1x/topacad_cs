@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +51,29 @@ namespace TelecomAdressBook
             fS.Read(b, 0, (int)fS.Length);
             fS.Close();
             return b;
+        }
+
+        static public void BinaryToFile(byte[] stream, string filename)
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            using(FileStream fs = new FileStream(filename+".bin", FileMode.Create))
+            {
+                formatter.Serialize(fs, stream);
+            }
+        }
+
+        static public byte[] FromFileToBin(string filename)
+        {
+            byte[] r;
+
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            using (Stream input = File.OpenRead(filename + ".bin"))
+            {
+                r = (byte[])formatter.Deserialize(input);
+            }
+
+            return r;
         }
 
         private void pictureBox1_DoubleClick(object sender, EventArgs e)

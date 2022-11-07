@@ -12,6 +12,11 @@ using System.Xml.Serialization;
 
 namespace TelecomAdressBook
 {
+    //Фотография должна сохраняться в корне проекта в формате .bin +-
+    //Добавить свойство "Профессия" каждому человек -
+    //У каждой профессии есть свои, уникальные методы и свойства. Придумать интерфейс для вызова этих методов. -
+    //Профессии реализовать с помощью наследования и интерфейсов. -
+
     public partial class Form1 : Form
     {
         Form2 addContactForm;
@@ -86,9 +91,13 @@ namespace TelecomAdressBook
         private void deleteContactToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (listBox1.Items.Count <= 0) return;
-            if (listBox1.SelectedItem == null) return;
+            if (listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Select item from list");
+                return;
+            }
 
-            if (manager.Delete(listBox1.SelectedItem.ToString()))
+                if (manager.Delete(listBox1.SelectedItem.ToString()))
             {
                 listBox1.Items.Remove(listBox1.SelectedItem);
             }
@@ -106,6 +115,10 @@ namespace TelecomAdressBook
                 }
                 if (editContactForm.ShowDialog() == DialogResult.OK)
                     Update_List();
+            }
+            else
+            {
+                MessageBox.Show("Select item from list");
             }
         }
 
