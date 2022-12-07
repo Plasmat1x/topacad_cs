@@ -87,7 +87,7 @@ namespace TelecomAdressBook
                 return list;
             }
 
-            return Contacts;
+            return null;
         }
 
         public Human GetContact(string selected)

@@ -67,6 +67,12 @@ namespace TelecomAdressBook
             }
 
             //main.Visible = true;
+
+            firstname_tb.Text = null;
+            lastname_tb.Text = null;
+            number_tb.Text = null;
+            pictureBox1.Image = Image.FromFile("add-plus-icon-28.png");
+
             //this.Close();
         }
 

@@ -6,18 +6,21 @@ using System.Threading.Tasks;
 
 namespace hw25
 {
-    class Tech
+    abstract public class Tech
     {
-        public string Name { get; set; }
+        virtual public string Name { get; set; }
 
-        public string Show()
+        //base params all tech
+
+        public override string ToString()
         {
-            return Name;
+            return Name + " " + this.GetType().ToString();
         }
     }
 
     class Tech1 : Tech
     {
+        //special params for concrete tech + methods
         public Tech1(string Name)
         {
             this.Name = Name;
@@ -26,21 +29,22 @@ namespace hw25
 
     class Tech2 : Tech
     {
+        //special params for concrete tech + methods
         public Tech2(string Name)
         {
             this.Name = Name;
         }
     }
 
+    public enum TechEnum
+    {
+        TECH1,
+        TECH2,
+    }
+
     class Storage
     {
         public List<Tech> storage { set; get; } = new List<Tech>();
-
-        public enum TechEnum
-        {
-            TECH1,
-            TECH2,
-        }
 
         public Storage()
         {
@@ -62,14 +66,6 @@ namespace hw25
             }
         }
 
-        public string show()
-        {
-            string str = "";
-            foreach(Tech tech in storage)
-            {
-                str += tech.Show() + Environment.NewLine;
-            }
-            return str;
-        }
+        //serialization like TelephoneBook
     }
 }

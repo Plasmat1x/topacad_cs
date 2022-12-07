@@ -36,10 +36,16 @@ namespace TelecomAdressBook
         private void search_bt_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
-
-            foreach (var item in manager.SearchContact(textBox1.Text, comboBox1.SelectedItem.ToString()))
+            if(manager.SearchContact(textBox1.Text, comboBox1.SelectedItem.ToString()) != null)
             {
-                listBox1.Items.Add(item.Get());
+                foreach (var item in manager.SearchContact(textBox1.Text, comboBox1.SelectedItem.ToString()))
+                {
+                    listBox1.Items.Add(item.Get());
+                }
+            }
+            else
+            {
+                listBox1.Items.Clear();
             }
         }
 
@@ -121,6 +127,7 @@ namespace TelecomAdressBook
         {
             if(FirstNameSort.Checked)
             {
+                Human.IdSort = false;
                 Human.SortVar = true;
                 manager.Contacts.Sort();
                 Update_List();
@@ -139,6 +146,17 @@ namespace TelecomAdressBook
                     manager.Contacts.Sort(item.Compare);
                 }
 
+                Update_List();
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButton1.Checked)
+            {
+                Human.SortVar = false;
+                Human.IdSort = true;
+                manager.Contacts.Sort();
                 Update_List();
             }
         }

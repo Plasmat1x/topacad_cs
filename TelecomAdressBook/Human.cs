@@ -33,11 +33,16 @@ namespace TelecomAdressBook
         }
 
         public static bool SortVar = false;
+        public static bool IdSort = false;
         public int CompareTo(Human other)
         {
-            if(SortVar)
+            if (SortVar)
             {
                 return FirstName.CompareTo(other.FirstName);
+            }
+            else if (IdSort)
+            {
+                return Id.CompareTo(other.Id);
             }
             else
             {

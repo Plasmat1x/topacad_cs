@@ -40,6 +40,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LastNameSort = new System.Windows.Forms.RadioButton();
             this.FirstNameSort = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -127,11 +128,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.LastNameSort);
             this.groupBox1.Controls.Add(this.FirstNameSort);
-            this.groupBox1.Location = new System.Drawing.Point(384, 373);
+            this.groupBox1.Location = new System.Drawing.Point(384, 353);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(83, 65);
+            this.groupBox1.Size = new System.Drawing.Size(83, 85);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sorting";
@@ -159,6 +161,19 @@
             this.FirstNameSort.Text = "First Name";
             this.FirstNameSort.UseVisualStyleBackColor = true;
             this.FirstNameSort.CheckedChanged += new System.EventHandler(this.FirstNameSort_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.radioButton1.Location = new System.Drawing.Point(6, 65);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(34, 17);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Id";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // Form1
             // 
@@ -202,6 +217,7 @@
         private System.Windows.Forms.RadioButton LastNameSort;
         private System.Windows.Forms.RadioButton FirstNameSort;
         private System.Windows.Forms.ToolStripMenuItem editContactToolStripMenuItem;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 
