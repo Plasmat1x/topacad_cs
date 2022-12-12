@@ -30,11 +30,12 @@
         {
             this.checkout_Button = new System.Windows.Forms.Button();
             this.admin_Button = new System.Windows.Forms.Button();
+            this.manager_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkout_Button
             // 
-            this.checkout_Button.Location = new System.Drawing.Point(13, 42);
+            this.checkout_Button.Location = new System.Drawing.Point(12, 12);
             this.checkout_Button.Name = "checkout_Button";
             this.checkout_Button.Size = new System.Drawing.Size(355, 127);
             this.checkout_Button.TabIndex = 0;
@@ -44,7 +45,7 @@
             // 
             // admin_Button
             // 
-            this.admin_Button.Location = new System.Drawing.Point(13, 220);
+            this.admin_Button.Location = new System.Drawing.Point(12, 145);
             this.admin_Button.Name = "admin_Button";
             this.admin_Button.Size = new System.Drawing.Size(355, 127);
             this.admin_Button.TabIndex = 1;
@@ -52,11 +53,22 @@
             this.admin_Button.UseVisualStyleBackColor = true;
             this.admin_Button.Click += new System.EventHandler(this.admin_Button_Click);
             // 
+            // manager_Button
+            // 
+            this.manager_Button.Location = new System.Drawing.Point(13, 278);
+            this.manager_Button.Name = "manager_Button";
+            this.manager_Button.Size = new System.Drawing.Size(355, 127);
+            this.manager_Button.TabIndex = 2;
+            this.manager_Button.Text = "Менеджер";
+            this.manager_Button.UseVisualStyleBackColor = true;
+            this.manager_Button.Click += new System.EventHandler(this.manager_Button_Click);
+            // 
             // SelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 453);
+            this.Controls.Add(this.manager_Button);
             this.Controls.Add(this.admin_Button);
             this.Controls.Add(this.checkout_Button);
             this.Name = "SelectForm";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button checkout_Button;
         private System.Windows.Forms.Button admin_Button;
+        private System.Windows.Forms.Button manager_Button;
     }
 }
 

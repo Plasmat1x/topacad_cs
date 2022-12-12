@@ -71,7 +71,7 @@ namespace WindowsFormsApp129.Forms
 
         private void acceptOrder_Button_Click(object sender, EventArgs e)
         {
-            if (customers_ListBox.SelectedIndex == -1) return;
+            if (customers_ListBox.SelectedItem == null) return;
 
             waitOrderCustomers.Add((Customer)customers_ListBox.SelectedItem);
 
